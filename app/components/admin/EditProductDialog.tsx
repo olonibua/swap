@@ -33,8 +33,8 @@ export const EditProductDialog: React.FC<EditProductDialogProps> = ({
     description: "",
     price: "",
     rating: 0,
-    category: [],
-    condition: [],
+    category: '',
+    condition: '',
     colors: "",
     stock: 0,
     images: "",
@@ -62,8 +62,7 @@ export const EditProductDialog: React.FC<EditProductDialogProps> = ({
     e.preventDefault();
     setLoading(true);
     try {
-        //@ts-expect-error
-      await updateProduct(product.$id, formData, selectedFile);
+      await updateProduct(product.$id, formData, selectedFile || undefined);
       toast.success("Product updated successfully");
       onProductUpdated();
       onClose();
@@ -146,8 +145,7 @@ export const EditProductDialog: React.FC<EditProductDialogProps> = ({
               <select
                 id="condition"
                 value={formData.condition}
-                onChange={(e) =>
-                  //@ts-expect-error
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                   setFormData({ ...formData, condition: e.target.value })
                 }
                 required
@@ -181,7 +179,6 @@ export const EditProductDialog: React.FC<EditProductDialogProps> = ({
               id="category"
               value={formData.category}
               onChange={(e) =>
-                //@ts-expect-error
                 setFormData({ ...formData, category: e.target.value })
               }
               required

@@ -39,21 +39,33 @@ export interface CategoryOption {
 
 
 export interface Items {
-  $id?: string;
+  $id: string;
   name: string;
   description: string;
   price: string;
   rating: number;
-  category: Category[];
-  condition: ProductCondition[];
+  category: string;
+  condition: string;
   colors: string;
   stock: number;
   images: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt?: string;
 }
 
-export type ProductFormData = Omit<Items, '$id' | 'createdAt' | 'updatedAt'>;
+export interface ProductFormData {
+  name: string;
+  description: string;
+  price: string;
+  rating: number;
+  category: string; // Since you're using a single category, not an array
+  condition: string; // Since you're using a single condition, not an array
+  colors: string;
+  stock: number;
+  images: string;
+}
+
+// export type ProductFormData = Omit<Items, '$id' | 'createdAt' | 'updatedAt'>;
 
 export interface ProductStats {
   totalProducts: number;

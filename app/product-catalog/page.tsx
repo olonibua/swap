@@ -1,7 +1,7 @@
 import React from 'react'
-import ProductListing from '../components/ProductListing'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import ProductListing from '../components/ProductListing';
 
 const page = () => {
   return (

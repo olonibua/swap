@@ -45,8 +45,8 @@ export const DeleteProductDialog: React.FC<DeleteProductDialogProps> = ({
         <AlertDialogHeader>
           <AlertDialogTitle>Delete Product</AlertDialogTitle>
           <AlertDialogDescription>
-            Are you sure you want to delete '{productName}'? This action cannot
-            be undone.
+            Are you sure you want to delete &quot;{productName}&quot;? This
+            action cannot be undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

@@ -42,8 +42,8 @@ const initialFormData: ProductFormData = {
   description: "",
   price: '',
   rating: 0,
-  category: [],
-  condition: [],
+  category: '',
+  condition: '',
   colors: "",
   stock: 0,
   images: "",
@@ -72,8 +72,23 @@ const AdminDashboard = () => {
         getProducts(),
         getProductStats(),
       ]);
-      //@ts-expect-error
-      setProducts(productsData);
+
+      // Map the Document data to match the Items interface
+      const mappedProducts = productsData.map((doc) => ({
+        $id: doc.$id,
+        name: doc.name as string,
+        description: doc.description as string,
+        price: doc.price as string,
+        rating: doc.rating as number,
+        category: doc.category as string,
+        condition: doc.condition as string,
+        colors: doc.colors as string,
+        stock: doc.stock as number,
+        images: doc.images as string,
+        createdAt: doc.createdAt as string,
+      }));
+
+      setProducts(mappedProducts);
       setStats(statsData);
     } catch (error) {
       console.error("Error loading data:", error);
@@ -224,7 +239,6 @@ const AdminDashboard = () => {
                       id="condition"
                       value={formData.condition}
                       onChange={(e) =>
-                        //@ts-expect-error
                         setFormData({ ...formData, condition: e.target.value })
                       }
                       required
@@ -269,7 +283,6 @@ const AdminDashboard = () => {
                     id="category"
                     value={formData.category}
                     onChange={(e) =>
-                      //@ts-expect-error
                       setFormData({ ...formData, category: e.target.value })
                     }
                     required
@@ -489,7 +502,6 @@ const AdminDashboard = () => {
         <DeleteProductDialog
           isOpen={!!isDeletingProduct}
           onClose={() => setIsDeletingProduct(null)}
-          //@ts-expect-error
           productId={isDeletingProduct.$id}
           productName={isDeletingProduct.name}
           onProductDeleted={loadData}
