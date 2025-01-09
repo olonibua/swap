@@ -45,7 +45,7 @@ const Hero = () => {
               Buy, Sell, and Swap Used & New Items
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-xl">
-              Find amazing deals on pre-loved items in your area. Join our
+              Find amazing deals on pre-owned items in your area. Join our
               community of smart shoppers and sellers today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
