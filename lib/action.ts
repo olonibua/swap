@@ -39,7 +39,8 @@ export const createUser = async (user: UserData) => {
 
 export const signIn = async (user: UserData) => {
   try {
-    const session = await account.createEmailPasswordSession(
+    // Add underscore prefix to indicate intentionally unused variable
+    const _session = await account.createEmailPasswordSession(
       user.email,
       user.password
     );
@@ -50,6 +51,7 @@ export const signIn = async (user: UserData) => {
     throw error;
   }
 };
+
 export const checkAuthStatus = async () => {
   try {
     const session = await account.get();
