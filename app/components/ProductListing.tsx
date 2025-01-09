@@ -112,7 +112,7 @@ const ProductListing: React.FC = () => {
     if (!selectedProduct) return;
 
     const message = `Hi, I'm interested in the ${selectedProduct.name} priced at $${selectedProduct.price}. Is it still available?`;
-    const whatsappUrl = `https://wa.me/+YOUR_PHONE_NUMBER?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/+2347035739608?text=${encodeURIComponent(
       message
     )}`;
     window.open(whatsappUrl, "_blank");

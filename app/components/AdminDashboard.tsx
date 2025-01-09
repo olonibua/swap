@@ -174,7 +174,7 @@ const AdminDashboard = () => {
               <DialogHeader>
                 <DialogTitle>Add New Product</DialogTitle>
               </DialogHeader>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 p-4">
                 <div>
                   <Label htmlFor="name">Product Name</Label>
                   <Input
