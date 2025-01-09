@@ -39,11 +39,7 @@ export const createUser = async (user: UserData) => {
 
 export const signIn = async (user: UserData) => {
   try {
-    // Add underscore prefix to indicate intentionally unused variable
-    const _session = await account.createEmailPasswordSession(
-      user.email,
-      user.password
-    );
+    await account.createEmailPasswordSession(user.email, user.password);
     const currentUser = await account.get();
     return currentUser;
   } catch (error) {
