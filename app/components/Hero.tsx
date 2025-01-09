@@ -42,7 +42,7 @@ const Hero = () => {
           {/* Left Column - Text Content */}
           <div className="flex flex-col justify-center space-y-6 pt-24 md:pt-0 text-white z-10">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Buy, Sell, and Swap Used Items
+              Buy, Sell, and Swap Used & New Items
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-xl">
               Find amazing deals on pre-loved items in your area. Join our
